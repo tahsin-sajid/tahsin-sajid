@@ -36,7 +36,7 @@ export default function Navbar() {
         ))}
       </div>
       
-      <a href="mailto:tahsinsajid1616@gmail.com">
+      <a href="https://api.leadconnectorhq.com/widget/bookings/tahsin-sajid-1-on-1-call" target="_blank" rel="noopener noreferrer">
         <motion.button 
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
