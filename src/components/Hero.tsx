@@ -79,17 +79,14 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="hero-text-anim" style={{ zIndex: 10, position: "relative", width: "400px", height: "500px" }}>
-        <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", borderRadius: "20px", overflow: "hidden", border: "1px solid rgba(0, 245, 239, 0.2)" }}>
-           {/* Fallback to portrait if specific image not defined yet */}
+      <div className="hero-text-anim" style={{ zIndex: 10, position: "relative", width: "min(400px, 38vw)", aspectRatio: "1 / 1", borderRadius: "24px", overflow: "hidden", border: "1px solid rgba(0, 245, 239, 0.35)", background: "#fff", boxShadow: "0 24px 80px rgba(0, 245, 239, 0.12)" }}>
            <Image 
-             src="/images/a823f75e-f31d-4cf1-b457-bf33b56f9947.png" 
+             src="/images/branding%20image.png" 
              alt="Tahsin Sajid Portrait" 
              fill
-             style={{ objectFit: "cover", objectPosition: "center" }}
+             sizes="(max-width: 768px) 72vw, 400px"
+             style={{ objectFit: "contain", objectPosition: "center" }}
            />
-           <div style={{ position: "absolute", bottom: 0, left: 0, width: "100%", height: "50%", background: "linear-gradient(to top, var(--color-bg), transparent)" }} />
-        </div>
       </div>
     </section>
   );
