@@ -21,13 +21,15 @@ export default function Hero() {
   return (
     <section 
       ref={containerRef}
+      id="home"
       style={{
         position: "relative",
         height: "100vh",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: "0 10vw",
+            padding: "0 10vw",
+            scrollMarginTop: "100px",
         overflow: "hidden"
       }}
     >
@@ -47,7 +49,8 @@ export default function Hero() {
         </p>
         
         <div className="hero-text-anim" style={{ display: "flex", gap: "1rem" }}>
-          <motion.button 
+          <motion.a 
+            href="#projects"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             style={{
@@ -60,8 +63,9 @@ export default function Hero() {
             }}
           >
             View Work
-          </motion.button>
-          <motion.button 
+          </motion.a>
+          <motion.a
+            href="#contact"
             whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
             whileTap={{ scale: 0.95 }}
             style={{
@@ -75,11 +79,16 @@ export default function Hero() {
             }}
           >
             Contact Me
-          </motion.button>
+          </motion.a>
         </div>
       </div>
 
-      <div className="hero-text-anim" style={{ zIndex: 10, position: "relative", width: "min(400px, 38vw)", aspectRatio: "1 / 1", borderRadius: "24px", overflow: "hidden", border: "1px solid rgba(0, 245, 239, 0.35)", background: "#fff", boxShadow: "0 24px 80px rgba(0, 245, 239, 0.12)" }}>
+       <div className="hero-text-anim profile-frame" style={{ zIndex: 10, position: "relative", width: "min(400px, 38vw)", aspectRatio: "1 / 1", borderRadius: "24px", overflow: "visible" }}>
+         <span className="profile-orbit profile-orbit-one" />
+         <span className="profile-orbit profile-orbit-two" />
+         <span className="profile-corner profile-corner-one" />
+         <span className="profile-corner profile-corner-two" />
+         <div className="profile-image-shell">
            <Image 
              src="/images/branding%20image.png" 
              alt="Tahsin Sajid Portrait" 
@@ -87,6 +96,7 @@ export default function Hero() {
              sizes="(max-width: 768px) 72vw, 400px"
              style={{ objectFit: "contain", objectPosition: "center" }}
            />
+           </div>
       </div>
     </section>
   );

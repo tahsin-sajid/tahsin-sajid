@@ -7,8 +7,11 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
-import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
+import Testimonials from "@/components/Testimonials";
+import WorkShowcase from "@/components/WorkShowcase";
+import Footer from "@/components/Footer";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -40,7 +43,7 @@ export default function Home() {
 
   if (!mounted) return (
     <div style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#0B181A", color: "#00F5EF" }}>
-      Loading TS. Experience...
+      Loading TS. Portfolio...
     </div>
   );
 
@@ -51,8 +54,11 @@ export default function Home() {
       <About />
       <Skills />
       <Projects />
-      <Experience />
+      <WorkShowcase />
+      <Testimonials />
       <Contact />
+      <Footer />
+      <FloatingWhatsApp />
     </main>
   );
 }

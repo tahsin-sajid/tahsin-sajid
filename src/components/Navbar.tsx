@@ -2,8 +2,16 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
+
+const links = ["Home", "About", "Skills", "Projects", "Results", "Contact"];
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
+  const closeMenu = () => setOpen(false);
+
   return (
     <motion.nav 
       initial={{ y: -100, opacity: 0 }}
@@ -28,10 +36,10 @@ export default function Navbar() {
         TS<span style={{ color: "var(--color-text)" }}>.</span>
       </div>
       
-      <div style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
-        {["About", "Skills", "Projects", "Experience", "Contact"].map((item) => (
-          <Link key={item} href={`#${item.toLowerCase()}`} style={{ fontSize: "0.9rem", fontWeight: 500, opacity: 0.8, transition: "opacity 0.2s" }}>
-            <span className="nav-link-hover" style={{ cursor: "pointer" }}>{item}</span>
+      <div className={`nav-links ${open ? "nav-links-open" : ""}`}>
+        {links.map((item) => (
+          <Link key={item} href={`#${item === "Home" ? "home" : item.toLowerCase()}`} onClick={closeMenu} style={{ fontSize: "0.9rem", fontWeight: 500, opacity: 0.8, transition: "opacity 0.2s" }}>
+            <span className="nav-link-hover">{item}</span>
           </Link>
         ))}
       </div>
@@ -50,9 +58,12 @@ export default function Navbar() {
             fontWeight: 600
           }}
         >
-          Let's Talk
+          Book a Call
         </motion.button>
       </a>
+      <button className="nav-menu-button" type="button" aria-label={open ? "Close navigation" : "Open navigation"} onClick={() => setOpen(!open)}>
+        {open ? <X size={22} /> : <Menu size={22} />}
+      </button>
     </motion.nav>
   );
 }

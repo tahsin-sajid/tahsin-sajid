@@ -27,23 +27,16 @@ export default function Contact() {
           </motion.a>
 
           <motion.a 
-            href="tel:+923077362090"
+            href="https://wa.me/923305503887"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             style={{ padding: "1rem 2rem", color: "var(--color-text)", fontSize: "1.1rem", borderBottom: "1px solid rgba(255,255,255,0.2)" }}
           >
-            📞 +92 307 7362090
+            WhatsApp: +92 330 5503887
           </motion.a>
-          
-          <motion.a 
-            href="https://tahsinsajid.com"
-            target="_blank"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            style={{ padding: "0.5rem 2rem", color: "rgba(228, 234, 237, 0.6)", fontSize: "1rem" }}
-          >
-            🌐 tahsinsajid.com
-          </motion.a>
+          <p style={{ color: "rgba(228, 234, 237, 0.6)", fontSize: "1rem" }}>Remote-first. Working with clients globally.</p>
         </div>
       </div>
 
