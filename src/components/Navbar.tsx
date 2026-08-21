@@ -2,10 +2,11 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
-const links = ["Home", "About", "Skills", "Projects", "Results", "Contact"];
+const links = ["About", "Skills", "Projects", "Results", "Contact"];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -13,7 +14,8 @@ export default function Navbar() {
   const closeMenu = () => setOpen(false);
 
   return (
-    <motion.nav 
+    <motion.nav
+      className="site-nav"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
@@ -26,15 +28,16 @@ export default function Navbar() {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        zIndex: 100,
+        zIndex: 1000,
         backdropFilter: "blur(10px)",
         background: "rgba(11, 24, 26, 0.5)",
         borderBottom: "1px solid rgba(255,255,255,0.05)"
       }}
     >
-      <div style={{ fontSize: "1.2rem", fontWeight: 700, color: "var(--color-primary)" }}>
-        TS<span style={{ color: "var(--color-text)" }}>.</span>
-      </div>
+      <Link href="#home" className="brand-link" aria-label="Return to Tahsin Sajid home page">
+        <Image className="brand-logo" src="/images/logo.png" alt="" width={42} height={42} priority />
+        <span className="brand-name">Tahsin Sajid</span>
+      </Link>
       
       <div className={`nav-links ${open ? "nav-links-open" : ""}`}>
         {links.map((item) => (

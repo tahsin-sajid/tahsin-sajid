@@ -99,6 +99,8 @@ export default function Hero() {
       </div>
 
       <div className="hero-text-anim profile-frame hero-profile" style={{ zIndex: 10, position: "relative", width: "min(400px, 38vw)", aspectRatio: "1 / 1", borderRadius: "24px", overflow: "visible" }}>
+         <span className="profile-glow" aria-hidden="true" />
+         <span className="profile-grid" aria-hidden="true" />
          <span className="profile-orbit profile-orbit-one" />
          <span className="profile-orbit profile-orbit-two" />
          <span className="profile-corner profile-corner-one" />
@@ -109,7 +111,7 @@ export default function Hero() {
              alt="Tahsin Sajid Portrait" 
              fill
              sizes="(max-width: 768px) 72vw, 400px"
-             style={{ objectFit: "contain", objectPosition: "center" }}
+             style={{ objectFit: "contain", objectPosition: "center bottom" }}
            />
            </div>
       </div>
