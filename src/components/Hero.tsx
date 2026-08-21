@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import Interactive3D from "./Interactive3D";
 
 const Background3D = dynamic(() => import("./Background3D"), {
   ssr: false,
@@ -63,7 +64,7 @@ export default function Hero() {
           Building end-to-end automation systems and AI integrations for service businesses that reduce manual work and increase revenue.
         </p>
         
-        <div className="hero-text-anim hero-actions" style={{ display: "flex", gap: "1rem" }}>
+        <div className="hero-text-anim hero-actions" style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
           <motion.a 
             href="#projects"
             whileHover={{ scale: 1.05 }}
@@ -95,10 +96,19 @@ export default function Hero() {
           >
             Contact Me
           </motion.a>
+          <motion.a
+            href="/resume.pdf"
+            download
+            whileHover={{ scale: 1.05, backgroundColor: "rgba(239,165,69,0.12)" }}
+            whileTap={{ scale: 0.95 }}
+            className="resume-button"
+          >
+            Download Resume
+          </motion.a>
         </div>
       </div>
 
-      <div className="hero-text-anim profile-frame hero-profile" style={{ zIndex: 10, position: "relative", width: "min(400px, 38vw)", aspectRatio: "1 / 1", borderRadius: "24px", overflow: "visible" }}>
+      <Interactive3D className="hero-text-anim profile-frame hero-profile" intensity={11}>
          <span className="profile-glow" aria-hidden="true" />
          <span className="profile-grid" aria-hidden="true" />
          <span className="profile-orbit profile-orbit-one" />
@@ -114,7 +124,7 @@ export default function Hero() {
              style={{ objectFit: "contain", objectPosition: "center bottom" }}
            />
            </div>
-      </div>
+      </Interactive3D>
     </section>
   );
 }

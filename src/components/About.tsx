@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Interactive3D from "./Interactive3D";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -58,7 +59,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="about-animate about-visual" style={{ position: "relative", height: "100%", minHeight: "500px", borderRadius: "20px", overflow: "hidden", border: "1px solid rgba(239, 165, 69, 0.2)" }}>
+        <Interactive3D className="about-animate about-visual" intensity={7} style={{ position: "relative", height: "100%", minHeight: "500px", borderRadius: "20px", overflow: "hidden", border: "1px solid rgba(239, 165, 69, 0.2)" }}>
            {/* Visual element representing automation nodes */}
            <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at center, rgba(0,245,239,0.1) 0%, transparent 70%)" }} />
            <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", textAlign: "center" }}>
@@ -76,7 +77,7 @@ export default function About() {
                ⚙️
              </div>
            </div>
-        </div>
+        </Interactive3D>
       </div>
     </section>
   );

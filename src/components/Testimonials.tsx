@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Interactive3D from "./Interactive3D";
 
 // Replace these clearly marked placeholders with approved client feedback.
 const testimonials = [
@@ -17,11 +18,13 @@ export default function Testimonials() {
       <p className="section-intro">Real feedback from businesses and clients I&apos;ve worked with.</p>
       <div className="testimonial-grid">
         {testimonials.map((testimonial, index) => (
-          <motion.article key={`${testimonial.name}-${index}`} className="testimonial-card glass-panel" whileHover={{ y: -8, rotateX: 2, rotateY: index === 1 ? -2 : 2 }}>
+          <Interactive3D key={`${testimonial.name}-${index}`} className="testimonial-card glass-panel" intensity={6}>
+            <article>
             <div className="testimonial-topline"><span className="testimonial-avatar">{testimonial.initials}</span><span className="stars" aria-label="Placeholder five star rating">★★★★★</span></div>
             <p className="testimonial-quote">&ldquo;{testimonial.quote}&rdquo;</p>
             <div><strong>{testimonial.name}</strong><p>{testimonial.role}</p><small>{testimonial.project}</small></div>
-          </motion.article>
+            </article>
+          </Interactive3D>
         ))}
       </div>
     </section>

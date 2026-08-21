@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Interactive3D from "./Interactive3D";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -52,7 +53,7 @@ export default function Skills() {
       
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "2rem" }}>
         {skillCategories.map((cat, i) => (
-          <div key={i} className="skill-card glass-panel" style={{ padding: "2.5rem", position: "relative", overflow: "hidden" }}>
+          <Interactive3D key={i} className="skill-card glass-panel" intensity={6} style={{ padding: "2.5rem", position: "relative", overflow: "hidden" }}>
             <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "4px", background: `linear-gradient(90deg, ${i === 0 ? "var(--color-primary)" : i === 1 ? "var(--color-secondary)" : "#00c4c0"}, transparent)` }} />
             <h3 style={{ fontSize: "1.5rem", marginBottom: "2rem", color: "var(--color-text)" }}>{cat.title}</h3>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "0.8rem" }}>
@@ -74,7 +75,7 @@ export default function Skills() {
                 </motion.span>
               ))}
             </div>
-          </div>
+          </Interactive3D>
         ))}
       </div>
     </section>

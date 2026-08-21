@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Interactive3D from "./Interactive3D";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -68,7 +69,7 @@ export default function Projects() {
               </div>
             )}
             
-            <div style={{ order: i % 2 === 0 ? 1 : 2, borderRadius: "20px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)", position: "relative", aspectRatio: "16/9", background: "#000" }}>
+            <Interactive3D className="project-media" intensity={5} style={{ order: i % 2 === 0 ? 1 : 2, borderRadius: "20px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)", position: "relative", aspectRatio: "16/9", background: "#000" }}>
               <video
                 src={project.videoSrc} 
                 muted 
@@ -78,7 +79,7 @@ export default function Projects() {
                 style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.8 }}
               />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(11,24,26,0.8), transparent)" }} />
-            </div>
+            </Interactive3D>
 
             {i % 2 === 0 && (
               <div style={{ order: 2 }}>
