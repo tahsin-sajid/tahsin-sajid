@@ -31,7 +31,7 @@ export default function About() {
 
   return (
     <section id="about" ref={sectionRef} style={{ padding: "10vh 10vw", minHeight: "100vh", display: "flex", alignItems: "center" }}>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
+      <div className="about-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
         
         <div>
           <h2 className="about-animate" style={{ fontSize: "clamp(2.5rem, 4vw, 4rem)", marginBottom: "2rem" }}>
@@ -58,7 +58,7 @@ export default function About() {
           </div>
         </div>
 
-        <div className="about-animate" style={{ position: "relative", height: "100%", minHeight: "500px", borderRadius: "20px", overflow: "hidden", border: "1px solid rgba(239, 165, 69, 0.2)" }}>
+        <div className="about-animate about-visual" style={{ position: "relative", height: "100%", minHeight: "500px", borderRadius: "20px", overflow: "hidden", border: "1px solid rgba(239, 165, 69, 0.2)" }}>
            {/* Visual element representing automation nodes */}
            <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at center, rgba(0,245,239,0.1) 0%, transparent 70%)" }} />
            <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", textAlign: "center" }}>

@@ -1,13 +1,19 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import Image from "next/image";
-import Background3D from "./Background3D";
+import dynamic from "next/dynamic";
+
+const Background3D = dynamic(() => import("./Background3D"), {
+  ssr: false,
+  loading: () => null,
+});
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [showBackground, setShowBackground] = useState(false);
   
   useEffect(() => {
     // Simple GSAP animation for text load
@@ -18,8 +24,17 @@ export default function Hero() {
     );
   }, []);
 
+  useEffect(() => {
+    const backgroundTimer = window.setTimeout(() => setShowBackground(true), 1200);
+
+    return () => {
+      window.clearTimeout(backgroundTimer);
+    };
+  }, []);
+
   return (
-    <section 
+    <section
+      className="hero-section"
       ref={containerRef}
       id="home"
       style={{
@@ -33,9 +48,9 @@ export default function Hero() {
         overflow: "hidden"
       }}
     >
-      <Background3D />
+      {showBackground && <Background3D />}
       
-      <div style={{ zIndex: 10, maxWidth: "600px" }}>
+      <div className="hero-copy" style={{ zIndex: 10, maxWidth: "600px" }}>
         <p className="hero-text-anim" style={{ color: "var(--color-primary)", textTransform: "uppercase", letterSpacing: "2px", marginBottom: "1rem" }}>
           Tahsin Sajid
         </p>
@@ -48,7 +63,7 @@ export default function Hero() {
           Building end-to-end automation systems and AI integrations for service businesses that reduce manual work and increase revenue.
         </p>
         
-        <div className="hero-text-anim" style={{ display: "flex", gap: "1rem" }}>
+        <div className="hero-text-anim hero-actions" style={{ display: "flex", gap: "1rem" }}>
           <motion.a 
             href="#projects"
             whileHover={{ scale: 1.05 }}
@@ -83,7 +98,7 @@ export default function Hero() {
         </div>
       </div>
 
-       <div className="hero-text-anim profile-frame" style={{ zIndex: 10, position: "relative", width: "min(400px, 38vw)", aspectRatio: "1 / 1", borderRadius: "24px", overflow: "visible" }}>
+      <div className="hero-text-anim profile-frame hero-profile" style={{ zIndex: 10, position: "relative", width: "min(400px, 38vw)", aspectRatio: "1 / 1", borderRadius: "24px", overflow: "visible" }}>
          <span className="profile-orbit profile-orbit-one" />
          <span className="profile-orbit profile-orbit-two" />
          <span className="profile-corner profile-corner-one" />

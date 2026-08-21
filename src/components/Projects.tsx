@@ -53,7 +53,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <section id="projects" ref={sectionRef} style={{ padding: "10vh 10vw", minHeight: "100vh" }}>
+    <section id="projects" className="projects-section" ref={sectionRef} style={{ padding: "10vh 10vw", minHeight: "100vh" }}>
       <h2 style={{ fontSize: "clamp(2.5rem, 4vw, 4rem)", marginBottom: "4rem" }}>
         Selected <span className="text-gradient">Work</span>
       </h2>
@@ -69,12 +69,12 @@ export default function Projects() {
             )}
             
             <div style={{ order: i % 2 === 0 ? 1 : 2, borderRadius: "20px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)", position: "relative", aspectRatio: "16/9", background: "#000" }}>
-              <video 
+              <video
                 src={project.videoSrc} 
-                autoPlay 
-                loop 
                 muted 
                 playsInline
+                preload="none"
+                controls
                 style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.8 }}
               />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(11,24,26,0.8), transparent)" }} />
