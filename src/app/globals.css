@@ -78,6 +78,10 @@ h1, h2, h3, h4, h5, h6 {
 .brand-name { color: var(--color-text); font-size: 1.05rem; font-weight: 750; letter-spacing: 0.01em; }
 .brand-link:hover .brand-name { color: var(--color-primary); }
 .nav-links { display: flex; gap: 1.6rem; align-items: center; }
+.nav-cta-group { display: flex; gap: 0.7rem; align-items: center; }
+.nav-resume-button, .nav-call-button { padding: 0.6rem 1.15rem; background: transparent; border-radius: 20px; font-size: 0.9rem; font-weight: 600; }
+.nav-resume-button { color: var(--color-secondary); border: 1px solid var(--color-secondary); }
+.nav-call-button { color: var(--color-primary); border: 1px solid var(--color-primary); }
 .interactive-3d { transform-style: preserve-3d; transition: transform 180ms ease-out, box-shadow 180ms ease-out; will-change: transform; }
 .interactive-3d:hover { box-shadow: 0 22px 50px rgba(0,0,0,0.24); }
 .resume-button { padding: 1rem 1.5rem; background: transparent; color: var(--color-secondary); border: 1px solid var(--color-secondary); font-weight: 600; border-radius: 30px; font-size: 1rem; }

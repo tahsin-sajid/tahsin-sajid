@@ -97,13 +97,14 @@ export default function Hero() {
             Contact Me
           </motion.a>
           <motion.a
-            href="/resume.pdf"
-            download
+            href="https://drive.google.com/file/d/18uzf8-j-p5wjU5q-QlCkB4J8v4RM5yWO/view?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05, backgroundColor: "rgba(239,165,69,0.12)" }}
             whileTap={{ scale: 0.95 }}
             className="resume-button"
           >
-            Download Resume
+            See My Resume
           </motion.a>
         </div>
       </div>

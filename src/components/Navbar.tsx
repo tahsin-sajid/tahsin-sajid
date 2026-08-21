@@ -47,23 +47,26 @@ export default function Navbar() {
         ))}
       </div>
       
-      <a href="https://api.leadconnectorhq.com/widget/bookings/tahsin-sajid-1-on-1-call" target="_blank" rel="noopener noreferrer">
-        <motion.button 
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          style={{
-            padding: "0.6rem 1.5rem",
-            background: "transparent",
-            color: "var(--color-primary)",
-            border: "1px solid var(--color-primary)",
-            borderRadius: "20px",
-            fontSize: "0.9rem",
-            fontWeight: 600
-          }}
-        >
-          Book a Call
-        </motion.button>
-      </a>
+      <div className="nav-cta-group">
+        <a href="https://drive.google.com/file/d/18uzf8-j-p5wjU5q-QlCkB4J8v4RM5yWO/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="nav-resume-button"
+          >
+            See My Resume
+          </motion.button>
+        </a>
+        <a href="https://api.leadconnectorhq.com/widget/bookings/tahsin-sajid-1-on-1-call" target="_blank" rel="noopener noreferrer">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="nav-call-button"
+          >
+            Book a Call
+          </motion.button>
+        </a>
+      </div>
       <button className="nav-menu-button" type="button" aria-label={open ? "Close navigation" : "Open navigation"} onClick={() => setOpen(!open)}>
         {open ? <X size={22} /> : <Menu size={22} />}
       </button>
