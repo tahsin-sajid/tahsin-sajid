@@ -56,7 +56,8 @@ export default function Hero() {
       id="home"
       style={{
         position: "relative",
-        height: "100vh",
+        minHeight: "calc(100svh - 74px)",
+        height: "calc(100vh - 74px)",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
@@ -138,7 +139,8 @@ export default function Hero() {
              alt="Tahsin Sajid Portrait" 
              fill
              sizes="(max-width: 768px) 72vw, 400px"
-             style={{ objectFit: "contain", objectPosition: "center bottom" }}
+             className="profile-portrait"
+             style={{ objectFit: "cover", objectPosition: "center top" }}
            />
            </div>
       </Interactive3D>

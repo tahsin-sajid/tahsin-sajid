@@ -20,9 +20,8 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       style={{
-        position: "fixed",
+        position: "sticky",
         top: 0,
-        left: 0,
         width: "100%",
         padding: "1.5rem 5vw",
         display: "flex",
