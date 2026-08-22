@@ -81,7 +81,7 @@ export default function Navbar() {
         <div className="booking-modal-backdrop" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setBookingOpen(false); }}>
           <section className="booking-modal" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title">
             <div className="booking-modal-header">
-              <div><div className="section-kicker">Private booking room</div><h2 id="booking-modal-title">Book a call with Tahsin</h2></div>
+              <div><h2 id="booking-modal-title">Book a call with Tahsin</h2></div>
               <button type="button" className="booking-modal-close" aria-label="Close booking calendar" onClick={() => setBookingOpen(false)}><X size={22} /></button>
             </div>
             <div className="booking-modal-frame">
