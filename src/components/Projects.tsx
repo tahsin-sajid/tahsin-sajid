@@ -78,7 +78,7 @@ export default function Projects() {
                   title={`${project.title} project video`}
                   controls
                   playsInline
-                  preload="metadata"
+                  preload="none"
                   style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                 />
               ) : (

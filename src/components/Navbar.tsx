@@ -44,27 +44,18 @@ export default function Navbar() {
             <span className="nav-link-hover">{item}</span>
           </Link>
         ))}
-      </div>
-      
-      <div className="nav-cta-group">
-        <a href="https://drive.google.com/file/d/18uzf8-j-p5wjU5q-QlCkB4J8v4RM5yWO/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="nav-resume-button"
-          >
-            See My Resume
-          </motion.button>
-        </a>
-        <a href="https://api.leadconnectorhq.com/widget/bookings/tahsin-sajid-1-on-1-call" target="_blank" rel="noopener noreferrer">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="nav-call-button"
-          >
-            Book a Call
-          </motion.button>
-        </a>
+        <div className="nav-cta-group">
+          <a href="https://drive.google.com/file/d/18uzf8-j-p5wjU5q-QlCkB4J8v4RM5yWO/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="nav-resume-button">
+              See My Resume
+            </motion.button>
+          </a>
+          <a href="https://api.leadconnectorhq.com/widget/bookings/tahsin-sajid-1-on-1-call" target="_blank" rel="noopener noreferrer">
+            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="nav-call-button">
+              Book a Call
+            </motion.button>
+          </a>
+        </div>
       </div>
       <button className="nav-menu-button" type="button" aria-label={open ? "Close navigation" : "Open navigation"} onClick={() => setOpen(!open)}>
         {open ? <X size={22} /> : <Menu size={22} />}

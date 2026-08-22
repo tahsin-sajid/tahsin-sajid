@@ -137,6 +137,8 @@ export default function Hero() {
              src="/images/branding image.png"
              alt="Tahsin Sajid Portrait" 
              fill
+             priority
+             quality={75}
              sizes="(max-width: 768px) 72vw, 400px"
              className="profile-portrait"
              style={{ objectFit: "cover", objectPosition: "center top" }}
