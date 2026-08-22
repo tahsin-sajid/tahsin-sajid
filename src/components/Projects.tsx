@@ -19,7 +19,7 @@ const projects = [
     title: "Dental Clinic Patient Journey Automation",
     description: "Zero-manual-intervention patient journey covering form submission to review request. Multi-stage reminder automation reduced no-shows by 30-40% and increased online patient testimonials by 25-35%.",
     stack: ["Go High Level", "Twilio", "Google Workspace", "Webhooks"],
-    videoSrc: "https://drive.google.com/file/d/1z2Yr3EvQ-fnyQiAnMFoxzc60QNjnVgUS/preview"
+    videoSrc: "https://www.youtube.com/watch?v=PibQtbH8L6w"
   },
   {
     title: "Voice AI Receptionist System",
@@ -83,7 +83,7 @@ export default function Projects() {
                 />
               ) : (
                 <iframe
-                  src={project.videoSrc}
+                  src={getVideoEmbedUrl(project.videoSrc)}
                   title={`${project.title} project video`}
                   loading="lazy"
                   allow="autoplay; fullscreen; picture-in-picture"
@@ -104,6 +104,11 @@ export default function Projects() {
       </div>
     </section>
   );
+}
+
+function getVideoEmbedUrl(url: string) {
+  const youtubeMatch = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&?/]+)/);
+  return youtubeMatch ? `https://www.youtube.com/embed/${youtubeMatch[1]}` : url;
 }
 
 function ProjectContent({ project }: { project: { title: string; description: string; stack: string[] } }) {
