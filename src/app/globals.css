@@ -120,6 +120,7 @@ h1, h2, h3, h4, h5, h6 {
 .stars { color: var(--color-secondary); letter-spacing: 0.12em; font-size: 0.75rem; }
 .testimonial-quote { font-size: 1.08rem; line-height: 1.7; color: rgba(228,234,237,0.82); }
 .testimonial-card strong { color: var(--color-text); }.testimonial-card p, .testimonial-card small { color: rgba(228,234,237,0.52); margin-top: 0.35rem; }
+.copyright-notice { max-width: calc(100% - 14vw); }
 .showcase-section { background: linear-gradient(180deg, transparent, rgba(0,245,239,0.035)); }
 .showcase-stack { max-width: 820px; margin: 4rem auto 0; display: grid; gap: 3rem; }
 .showcase-card { position: sticky; top: 125px; height: min(62vw, 520px); min-height: 260px; overflow: hidden; border: 1px solid rgba(255,255,255,0.16); border-radius: 18px; background: #101c1e; box-shadow: 0 28px 65px rgba(0,0,0,0.38); transform: rotateX(1deg); }
@@ -169,6 +170,7 @@ h1, h2, h3, h4, h5, h6 {
   .hero-section .hero-actions a { text-align: center; }
   .hero-section .hero-actions a, #contact .glass-panel { padding-left: 1rem !important; padding-right: 1rem !important; max-width: 100%; overflow-wrap: anywhere; }
   .glass-panel { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .copyright-notice { right: 7vw !important; max-width: 86vw; font-size: 0.75rem !important; }
 }
 
 @media (hover: none), (prefers-reduced-motion: reduce) {
