@@ -194,8 +194,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 700px) {
-  .whatsapp-float { width: 54px; }
-  .whatsapp-label { max-width: 0; opacity: 0; }
+  .whatsapp-float, .whatsapp-float:hover, .whatsapp-float:focus-visible { width: 54px; transform: none; animation: none; }
+  .whatsapp-label, .whatsapp-float:hover .whatsapp-label, .whatsapp-float:focus-visible .whatsapp-label { max-width: 0; opacity: 0; }
 }
 
 /* Lenis smooth scrolling defaults */
