@@ -190,6 +190,11 @@ h1, h2, h3, h4, h5, h6 {
   .whatsapp-float { width: 184px; }
 }
 
+@media (max-width: 700px) {
+  .whatsapp-float { width: 54px; }
+  .whatsapp-label { max-width: 0; opacity: 0; }
+}
+
 /* Lenis smooth scrolling defaults */
 html.lenis, html.lenis body {
   height: auto;
