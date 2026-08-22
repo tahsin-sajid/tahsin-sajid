@@ -69,14 +69,13 @@ export default function Hero() {
       {showBackground && <Background3D />}
       
       <div className="hero-copy" style={{ zIndex: 10, maxWidth: "600px" }}>
-        <p className="hero-text-anim hero-typed-name" aria-label="I am Tahsin Sajid">
-          {typedName}<span className="typing-cursor" aria-hidden="true">|</span>
-        </p>
         <h1 className="hero-text-anim" style={{ fontSize: "clamp(3rem, 5vw, 5rem)", lineHeight: 1.1, marginBottom: "1.5rem" }}>
           Go High Level <br/>
           <span className="text-gradient">Automation Specialist</span>
-          <br/> & AI Expert
         </h1>
+        <p className="hero-text-anim hero-typed-name" aria-label="I am Tahsin Sajid">
+          {typedName}<span className="typing-cursor" aria-hidden="true">|</span>
+        </p>
         <p className="hero-text-anim" style={{ fontSize: "1.2rem", color: "rgba(228, 234, 237, 0.7)", marginBottom: "2rem", lineHeight: 1.6 }}>
           Building end-to-end automation systems and AI integrations for service businesses that reduce manual work and increase revenue.
         </p>
