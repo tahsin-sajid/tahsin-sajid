@@ -15,6 +15,6 @@ export default function Footer() {
       <div><div className="footer-kicker">Services</div><h3>What We Build</h3><div className="footer-links">{services.map((service) => <a key={service} href="#skills">{service}</a>)}</div></div>
       <div><div className="footer-kicker">Get In Touch</div><h3>Contact Us</h3><div className="contact-links"><a href="https://wa.me/923305503887" target="_blank" rel="noopener noreferrer"><MessageCircle size={17} />+92 330 5503887</a><a href="mailto:tahsinsajid1616@gmail.com"><Mail size={17} />tahsinsajid1616@gmail.com</a><p><Globe2 size={17} />Remote-first delivery<br />Working with clients globally</p></div></div>
     </div>
-    <div className="footer-bottom"><div><Link href="/privacy-policy">Privacy Policy</Link><Link href="/terms-and-conditions">Terms &amp; Conditions</Link><a href="#home" aria-label="Back to top"><ArrowUpRight size={16} /></a></div></div>
+    <div className="footer-bottom"><div><Link href="/privacy-policy">Privacy Policy</Link><Link href="/terms-and-conditions">Terms &amp; Conditions</Link><a href="#home" aria-label="Back to top"><ArrowUpRight size={16} /></a></div><span>© {new Date().getFullYear()} Tahsin Sajid. All rights reserved.</span></div>
   </footer>;
 }

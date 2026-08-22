@@ -40,9 +40,6 @@ export default function Contact() {
         </div>
       </div>
 
-      <div className="copyright-notice" style={{ position: "absolute", right: "10vw", bottom: "2rem", color: "rgba(228, 234, 237, 0.3)", fontSize: "0.9rem", textAlign: "right" }}>
-        © {new Date().getFullYear()} Tahsin Sajid. All rights reserved.
-      </div>
     </section>
   );
 }
