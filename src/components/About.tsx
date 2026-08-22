@@ -59,24 +59,17 @@ export default function About() {
           </div>
         </div>
 
-        <Interactive3D className="about-animate about-visual" intensity={7} style={{ position: "relative", height: "100%", minHeight: "500px", borderRadius: "20px", overflow: "hidden", border: "1px solid rgba(239, 165, 69, 0.2)" }}>
-           {/* Visual element representing automation nodes */}
-           <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at center, rgba(0,245,239,0.1) 0%, transparent 70%)" }} />
-           <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", textAlign: "center" }}>
-             <motion.div 
-               animate={{ rotate: 360 }} 
-               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-               style={{ width: "200px", height: "200px", border: "1px dashed var(--color-primary)", borderRadius: "50%", position: "absolute", top: "-100px", left: "-100px" }}
-             />
-             <motion.div 
-               animate={{ rotate: -360 }} 
-               transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-               style={{ width: "150px", height: "150px", border: "1px dashed var(--color-secondary)", borderRadius: "50%", position: "absolute", top: "-75px", left: "-75px" }}
-             />
-             <div style={{ fontSize: "3rem", color: "var(--color-text)", background: "rgba(11,24,26,0.8)", padding: "1rem", borderRadius: "50%", border: "1px solid rgba(255,255,255,0.1)" }}>
-               ⚙️
-             </div>
-           </div>
+        <Interactive3D className="about-animate about-visual" intensity={7}>
+          <div className="automation-visual" aria-label="Interactive automation workflow graphic">
+            <div className="automation-lines" aria-hidden="true"><i /><i /><i /><i /></div>
+            <div className="automation-core"><span>GHL</span><small>AUTOMATION<br />ENGINE</small></div>
+            <div className="automation-node automation-node-one"><b>01</b><span>Capture</span></div>
+            <div className="automation-node automation-node-two"><b>02</b><span>Qualify</span></div>
+            <div className="automation-node automation-node-three"><b>03</b><span>Follow up</span></div>
+            <div className="automation-node automation-node-four"><b>04</b><span>Convert</span></div>
+            <div className="automation-signal signal-one" aria-hidden="true" />
+            <div className="automation-signal signal-two" aria-hidden="true" />
+          </div>
         </Interactive3D>
       </div>
     </section>

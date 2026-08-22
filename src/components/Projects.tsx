@@ -12,19 +12,21 @@ const projects = [
     title: "HVAC Lead-to-Review Automation System",
     description: "Built a 4-stage automated lead lifecycle covering lead capture, booking confirmation, estimate approval, and review requests. Reduced follow-up time by 60% and recovered 15-20% of non-responsive leads.",
     stack: ["Go High Level", "Make", "Twilio", "OpenAI", "Webhooks"],
-    videoUrl: "https://www.awesomescreenshot.com/video/55582542?key=f1886a898c3b90710a1e053712b620df"
+    videoSrc: "/videos/HVAC.mp4",
+    sourceUrl: "https://www.awesomescreenshot.com/video/55582542?key=f1886a898c3b90710a1e053712b620df"
   },
   {
     title: "Dental Clinic Patient Journey Automation",
     description: "Zero-manual-intervention patient journey covering form submission to review request. Multi-stage reminder automation reduced no-shows by 30-40% and increased online patient testimonials by 25-35%.",
     stack: ["Go High Level", "Twilio", "Google Workspace", "Webhooks"],
-    videoUrl: "https://drive.google.com/file/d/1z2Yr3EvQ-fnyQiAnMFoxzc60QNjnVgUS/view?usp=drive_link"
+    videoSrc: "https://drive.google.com/file/d/1z2Yr3EvQ-fnyQiAnMFoxzc60QNjnVgUS/preview"
   },
   {
     title: "Voice AI Receptionist System",
     description: "AI-powered Voice Receptionist for service businesses to handle inbound calls, automated lead qualification, and appointment scheduling seamlessly integrated with GHL CRM and calendars.",
     stack: ["Go High Level", "Voice AI", "Conversational AI", "CRM"],
-    videoUrl: "https://www.awesomescreenshot.com/video/55582830?key=04613a40187642872bbc2e37ef794461"
+    videoSrc: "/videos/Voice AI Agent.mp4",
+    sourceUrl: "https://www.awesomescreenshot.com/video/55582830?key=04613a40187642872bbc2e37ef794461"
   }
 ];
 
@@ -70,14 +72,25 @@ export default function Projects() {
             )}
             
             <Interactive3D className="project-media" intensity={5} style={{ order: i % 2 === 0 ? 1 : 2, borderRadius: "20px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.1)", position: "relative", aspectRatio: "16/9", background: "#000" }}>
-              <iframe
-                src={getVideoEmbedUrl(project.videoUrl)}
-                title={`${project.title} project video`}
-                loading="lazy"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-                style={{ width: "100%", height: "100%", border: 0, display: "block" }}
-              />
+              {project.videoSrc.startsWith("/") ? (
+                <video
+                  src={project.videoSrc}
+                  title={`${project.title} project video`}
+                  controls
+                  playsInline
+                  preload="metadata"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                />
+              ) : (
+                <iframe
+                  src={project.videoSrc}
+                  title={`${project.title} project video`}
+                  loading="lazy"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  style={{ width: "100%", height: "100%", border: 0, display: "block" }}
+                />
+              )}
             </Interactive3D>
 
             {i % 2 === 0 && (
@@ -93,12 +106,7 @@ export default function Projects() {
   );
 }
 
-function getVideoEmbedUrl(url: string) {
-  const driveMatch = url.match(/drive\.google\.com\/file\/d\/([^/]+)/);
-  return driveMatch ? `https://drive.google.com/file/d/${driveMatch[1]}/preview` : url;
-}
-
-function ProjectContent({ project }: { project: any }) {
+function ProjectContent({ project }: { project: { title: string; description: string; stack: string[] } }) {
   return (
     <div>
       <h3 style={{ fontSize: "2rem", marginBottom: "1.5rem", color: "var(--color-text)" }}>{project.title}</h3>

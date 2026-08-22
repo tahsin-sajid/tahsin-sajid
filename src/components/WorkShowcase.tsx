@@ -10,7 +10,7 @@ export default function WorkShowcase() {
       <p className="section-intro">A closer look at additional digital experiences built for conversion and clarity.</p>
       <div className="showcase-stack">
         <Interactive3D className="showcase-card" intensity={5}>
-          <iframe src="/Go High Level Automation.pdf#view=FitH" title="Go High Level Automation portfolio" loading="lazy" />
+          <iframe src="/documents/Go%20High%20Level%20Automation.pdf#view=FitH" title="Go High Level Automation portfolio" loading="lazy" />
           <figcaption>Go High Level Automation portfolio</figcaption>
         </Interactive3D>
       </div>
