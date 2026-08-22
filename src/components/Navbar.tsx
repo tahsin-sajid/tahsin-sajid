@@ -57,11 +57,13 @@ export default function Navbar() {
       </Link>
       
       <div className={`nav-links ${open ? "nav-links-open" : ""}`}>
-        {links.map((item) => (
-          <Link key={item} href={`#${item === "Home" ? "home" : item.toLowerCase()}`} onClick={closeMenu} style={{ fontSize: "0.9rem", fontWeight: 500, opacity: 0.8, transition: "opacity 0.2s" }}>
-            <span className="nav-link-hover">{item}</span>
-          </Link>
-        ))}
+        <div className="nav-menu-links">
+          {links.map((item) => (
+            <Link key={item} href={`#${item === "Home" ? "home" : item.toLowerCase()}`} onClick={closeMenu} style={{ fontSize: "0.9rem", fontWeight: 500, opacity: 0.8, transition: "opacity 0.2s" }}>
+              <span className="nav-link-hover">{item}</span>
+            </Link>
+          ))}
+        </div>
         <div className="nav-cta-group">
           <a href="https://drive.google.com/file/d/18uzf8-j-p5wjU5q-QlCkB4J8v4RM5yWO/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
             <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="nav-resume-button">
