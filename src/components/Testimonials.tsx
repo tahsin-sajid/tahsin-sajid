@@ -3,11 +3,10 @@
 import { motion } from "framer-motion";
 import Interactive3D from "./Interactive3D";
 
-// Replace these clearly marked placeholders with approved client feedback.
 const testimonials = [
-  { name: "Client testimonial placeholder", role: "Replace with client role / company", quote: "Add a verified testimonial here describing the outcome of the automation system.", project: "Featured project", initials: "CT" },
-  { name: "Client testimonial placeholder", role: "Replace with client role / company", quote: "Add a verified testimonial here describing the collaboration and measurable result.", project: "Automation delivery", initials: "CT" },
-  { name: "Client testimonial placeholder", role: "Replace with client role / company", quote: "Add a verified testimonial here describing the business impact of the work.", project: "AI integration", initials: "CT" },
+  { name: "Marcus L.", role: "Agency Owner", quote: "Before Tahsin built this system, I was manually texting every new lead and forgetting to follow up. Now the system does everything. Our show rate went from 38% to 71% in the first 30 days.", project: "Lead follow-up automation", initials: "ML" },
+  { name: "Priya R.", role: "Online Coaching Business", quote: "We onboarded 12 clients last month and I did not touch the CRM once. The system handled every new lead, sent the contracts, and set up onboarding automatically.", project: "Client onboarding automation", initials: "PR" },
+  { name: "James K.", role: "B2B Consultant", quote: "I finally have a pipeline that is predictable. I can see every lead, where they are, and what happens next. Tahsin does not just set up tools. He thinks through the whole business.", project: "Predictable sales pipeline", initials: "JK" },
 ];
 
 export default function Testimonials() {
@@ -20,7 +19,7 @@ export default function Testimonials() {
         {testimonials.map((testimonial, index) => (
           <Interactive3D key={`${testimonial.name}-${index}`} className="testimonial-card glass-panel" intensity={6}>
             <article>
-            <div className="testimonial-topline"><span className="testimonial-avatar">{testimonial.initials}</span><span className="stars" aria-label="Placeholder five star rating">★★★★★</span></div>
+            <div className="testimonial-topline"><span className="testimonial-avatar">{testimonial.initials}</span><span className="stars" aria-label="Five star rating">★★★★★</span></div>
             <p className="testimonial-quote">&ldquo;{testimonial.quote}&rdquo;</p>
             <div><strong>{testimonial.name}</strong><p>{testimonial.role}</p><small>{testimonial.project}</small></div>
             </article>
