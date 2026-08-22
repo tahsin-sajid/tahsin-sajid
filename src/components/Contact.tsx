@@ -8,9 +8,6 @@ export default function Contact() {
       <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at bottom, rgba(0,245,239,0.15) 0%, transparent 60%)", zIndex: -1 }} />
       
       <div style={{ textAlign: "center", maxWidth: "800px" }}>
-        <h2 style={{ fontSize: "clamp(3rem, 5vw, 5rem)", marginBottom: "2rem" }}>
-          Let's build your next <span className="text-gradient">Automated System</span>
-        </h2>
         <p style={{ fontSize: "1.2rem", color: "rgba(228, 234, 237, 0.7)", marginBottom: "3rem", lineHeight: 1.6 }}>
           Whether you need a complete GHL CRM setup, an AI Voice Receptionist, or a custom automation workflow, I'm here to help you reduce manual work and scale your revenue.
         </p>
@@ -40,9 +37,6 @@ export default function Contact() {
         </div>
       </div>
 
-      <div style={{ position: "absolute", bottom: "2rem", width: "100%", textAlign: "center", color: "rgba(228, 234, 237, 0.3)", fontSize: "0.9rem" }}>
-        © {new Date().getFullYear()} Tahsin Sajid. All rights reserved.
-      </div>
     </section>
   );
 }
