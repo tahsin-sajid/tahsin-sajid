@@ -85,6 +85,8 @@ h1, h2, h3, h4, h5, h6 {
 .interactive-3d { transform-style: preserve-3d; transition: transform 180ms ease-out, box-shadow 180ms ease-out; will-change: transform; }
 .interactive-3d:hover { box-shadow: 0 22px 50px rgba(0,0,0,0.24); }
 .resume-button { padding: 1rem 1.5rem; background: transparent; color: var(--color-secondary); border: 1px solid var(--color-secondary); font-weight: 600; border-radius: 30px; font-size: 1rem; }
+.hero-typed-name { min-height: 1.8rem; margin: -0.7rem 0 1.5rem; color: var(--color-secondary); font-size: 1.15rem; font-weight: 700; letter-spacing: 0.08em; }
+.typing-cursor { display: inline-block; margin-left: 0.15rem; color: var(--color-primary); animation: cursor-blink 0.8s steps(1) infinite; }
 .nav-menu-button { display: none; color: var(--color-text); padding: 0.4rem; }
 .nav-link-hover:hover { color: var(--color-primary); }
 
@@ -101,6 +103,7 @@ h1, h2, h3, h4, h5, h6 {
 .profile-corner-one { top: 0; right: 0; border-width: 2px 2px 0 0; }
 .profile-corner-two { bottom: 0; left: 0; border-width: 0 0 2px 2px; }
 @keyframes orbit-spin { to { transform: rotate(374deg) rotateX(56deg); } }
+@keyframes cursor-blink { 50% { opacity: 0; } }
 
 .section-shell, .showcase-section { padding: 10vh 10vw; min-height: 80vh; }
 .section-shell h2, .showcase-section h2 { font-size: clamp(2.5rem, 4vw, 4rem); margin-bottom: 1rem; }

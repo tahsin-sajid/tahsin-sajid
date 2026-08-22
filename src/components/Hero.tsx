@@ -15,6 +15,7 @@ const Background3D = dynamic(() => import("./Background3D"), {
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [showBackground, setShowBackground] = useState(false);
+  const [typedName, setTypedName] = useState("");
   
   useEffect(() => {
     // Simple GSAP animation for text load
@@ -31,6 +32,21 @@ export default function Hero() {
     return () => {
       window.clearTimeout(backgroundTimer);
     };
+  }, []);
+
+  useEffect(() => {
+    const name = "I am Tahsin Sajid";
+    let characterIndex = 0;
+    const typingTimer = window.setInterval(() => {
+      characterIndex += 1;
+      setTypedName(name.slice(0, characterIndex));
+
+      if (characterIndex === name.length) {
+        window.clearInterval(typingTimer);
+      }
+    }, 120);
+
+    return () => window.clearInterval(typingTimer);
   }, []);
 
   return (
@@ -52,8 +68,8 @@ export default function Hero() {
       {showBackground && <Background3D />}
       
       <div className="hero-copy" style={{ zIndex: 10, maxWidth: "600px" }}>
-        <p className="hero-text-anim" style={{ color: "var(--color-primary)", textTransform: "uppercase", letterSpacing: "2px", marginBottom: "1rem" }}>
-          Tahsin Sajid
+        <p className="hero-text-anim hero-typed-name" aria-label="I am Tahsin Sajid">
+          {typedName}<span className="typing-cursor" aria-hidden="true">|</span>
         </p>
         <h1 className="hero-text-anim" style={{ fontSize: "clamp(3rem, 5vw, 5rem)", lineHeight: 1.1, marginBottom: "1.5rem" }}>
           Go High Level <br/>
@@ -118,7 +134,7 @@ export default function Hero() {
          <span className="profile-corner profile-corner-two" />
          <div className="profile-image-shell">
            <Image 
-             src="/images/branding%20image.png" 
+             src="/images/branding image.png"
              alt="Tahsin Sajid Portrait" 
              fill
              sizes="(max-width: 768px) 72vw, 400px"

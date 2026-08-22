@@ -1,23 +1,27 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 
 function Particles() {
   const ref = useRef<any>(null);
 
-  const sphere = new Float32Array(500 * 3);
+  const sphere = useMemo(() => {
+    const positions = new Float32Array(360 * 3);
 
-  for (let i = 0; i < 500; i++) {
+    for (let i = 0; i < 360; i++) {
     const r = 20 * Math.cbrt(Math.random());
     const theta = Math.random() * 2 * Math.PI;
     const phi = Math.acos(2 * Math.random() - 1);
 
-    sphere[i * 3] = r * Math.sin(phi) * Math.cos(theta);
-    sphere[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
-    sphere[i * 3 + 2] = r * Math.cos(phi);
-  }
+      positions[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+      positions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+      positions[i * 3 + 2] = r * Math.cos(phi);
+    }
+
+    return positions;
+  }, []);
 
   useFrame((state, delta) => {
     if (ref.current) {
@@ -36,8 +40,8 @@ function Particles() {
       >
         <PointMaterial
           transparent
-          color="#00F5EF"
-          size={0.05}
+          color="#55e8df"
+          size={0.045}
           sizeAttenuation
           depthWrite={false}
         />
@@ -96,6 +100,8 @@ export default function Background3D() {
     >
       <Canvas
         camera={{ position: [0, 0, 15] }}
+        dpr={[1, 1.5]}
+        gl={{ alpha: true, antialias: false, powerPreference: "low-power" }}
         fallback={
           <div
             style={{
@@ -106,6 +112,7 @@ export default function Background3D() {
           />
         }
       >
+        <fog attach="fog" args={["#0B181A", 9, 26]} />
         <Particles />
       </Canvas>
     </div>
