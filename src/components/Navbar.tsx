@@ -4,17 +4,35 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const links = ["About", "Skills", "Projects", "Results", "Contact"];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [bookingOpen, setBookingOpen] = useState(false);
 
   const closeMenu = () => setOpen(false);
 
+  useEffect(() => {
+    if (!bookingOpen) return;
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setBookingOpen(false);
+    };
+
+    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = "";
+      document.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [bookingOpen]);
+
   return (
-    <motion.nav
+    <>
+      <motion.nav
       className="site-nav"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
@@ -50,16 +68,32 @@ export default function Navbar() {
               See My Resume
             </motion.button>
           </a>
-          <a href="https://api.leadconnectorhq.com/widget/bookings/tahsin-sajid-1-on-1-call" target="_blank" rel="noopener noreferrer">
-            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="nav-call-button">
+          <motion.button type="button" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="nav-call-button" onClick={() => { setBookingOpen(true); closeMenu(); }}>
               Book a Call
-            </motion.button>
-          </a>
+          </motion.button>
         </div>
       </div>
       <button className="nav-menu-button" type="button" aria-label={open ? "Close navigation" : "Open navigation"} onClick={() => setOpen(!open)}>
         {open ? <X size={22} /> : <Menu size={22} />}
       </button>
-    </motion.nav>
+      </motion.nav>
+      {bookingOpen && (
+        <div className="booking-modal-backdrop" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setBookingOpen(false); }}>
+          <section className="booking-modal" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title">
+            <div className="booking-modal-header">
+              <div><div className="section-kicker">Private booking room</div><h2 id="booking-modal-title">Book a call with Tahsin</h2></div>
+              <button type="button" className="booking-modal-close" aria-label="Close booking calendar" onClick={() => setBookingOpen(false)}><X size={22} /></button>
+            </div>
+            <div className="booking-modal-frame">
+              <iframe
+                src="https://api.leadconnectorhq.com/widget/bookings/tahsin-sajid-1-on-1-call"
+                title="Book a call with Tahsin Sajid"
+                allow="payment"
+              />
+            </div>
+          </section>
+        </div>
+      )}
+    </>
   );
 }
